@@ -10,7 +10,7 @@ const Card = ({seleactCouse,remaing,totalCost,Couses}) => {
 
     return (
         <div>
-            <h3>Credit Hour Remaining : {Couses.credit}</h3>
+            <h3>Credit Hour Remaining : {seleactCouse.length}</h3>
             <hr />
             <h3 className='font-tital'>couse name</h3>
             {

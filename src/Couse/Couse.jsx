@@ -10,7 +10,7 @@ const Couse = () => {
     const [seleactCouse, setSeleactCouses] = useState([])
     const [remaing, setRemaing] = useState(0)
     const [totalCost, setTotalCost] = useState(0)
-    // const [totalCredit,setTotalCredit] = useState(0)
+    
     
     useEffect(() => {
         fetch("./data.json")
@@ -20,7 +20,7 @@ const Couse = () => {
 
     const heandelSelector = (couse) => {
         console.log(couse);
-        // const newCredit =couse.credit 
+        
         const idExist = seleactCouse.find((item) => item.id == couse.id);
         let count = couse.price;
         if (idExist) {
@@ -29,7 +29,7 @@ const Couse = () => {
             seleactCouse.forEach((item) => {
                 count =count + item.price;
             })
-            const totalRemaing = 20000 - count;
+            const totalRemaing = count-20000;
             if (count > 20000) {
                 return alert(" tk sas ")
             }
@@ -56,9 +56,9 @@ const Couse = () => {
                                 <h2>{couse.name}</h2>
                                 <p>{couse.detail}</p>
                                 <div className="info">
+                                    <p><img src="../../public/dollar-sign 1.svg" alt="img" /></p>
                                     <p>slary:{couse.price}</p>
-                                    <p>thid</p>
-                                    <p>thid</p>
+                                    <img src='../../public/Frame.svg' alt="img" />
                                     <p>credit : {couse.credit}</p>
                                 </div>
                                 <button onClick={() => heandelSelector(couse)} className='card-btn'>seleact</button>
