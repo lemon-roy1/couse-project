@@ -10,8 +10,8 @@ const Couse = () => {
     const [seleactCouse, setSeleactCouses] = useState([])
     const [remaing, setRemaing] = useState(0)
     const [totalCost, setTotalCost] = useState(0)
-    
-    
+
+
     useEffect(() => {
         fetch("./data.json")
             .then(res => res.json())
@@ -20,16 +20,16 @@ const Couse = () => {
 
     const heandelSelector = (couse) => {
         console.log(couse);
-        
+
         const idExist = seleactCouse.find((item) => item.id == couse.id);
         let count = couse.price;
         if (idExist) {
             return alert('oll ready actor booking')
         } else {
             seleactCouse.forEach((item) => {
-                count =count + item.price;
+                count = count + item.price;
             })
-            const totalRemaing = count-20000;
+            const totalRemaing = 20000 - count;
             if (count > 20000) {
                 return alert(" tk sas ")
             }
@@ -67,7 +67,7 @@ const Couse = () => {
                     }
                 </div>
                 <div className='cart'>
-                    <Card seleactCouse={seleactCouse} remaing={remaing} totalCost={totalCost} Couses={Couses}/>
+                    <Card seleactCouse={seleactCouse} remaing={remaing} totalCost={totalCost} Couses={Couses} />
                 </div>
 
             </div>
